@@ -43,7 +43,7 @@
           </el-col>
         </el-row>
       </el-header>
-      <el-container height="600px">
+      <el-container>
         <el-aside width="200px" class="asideLeft">
           <el-menu
             :default-active="$route.path"
@@ -64,7 +64,7 @@
             </el-submenu>
           </el-menu>
         </el-aside>
-        <el-main>
+        <el-main style="min-height:600px">
           <router-view></router-view>
         </el-main>
       </el-container>
