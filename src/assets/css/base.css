@@ -34,3 +34,5 @@ vertical-align: baseline; /* 2 */
 .fr{float:right;}
 .txtCenter{text-align:center;}
 .indent2{text-indent:2em;}
+
+body,html{height:100%;}
