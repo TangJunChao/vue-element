@@ -26,6 +26,8 @@
     </el-main>
     <div class="page">
       <el-pagination
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
         background
         layout="prev, pager, next"
         :total="1000">
@@ -57,6 +59,12 @@ export default {
   methods: {
     async handleSearch(e) {
       console.log(e);
+    },
+    async handleSizeChange(val) {
+      console.log(val);
+    },
+    async handleCurrentChange(val) {
+      console.log(val);
     }
   }
 };

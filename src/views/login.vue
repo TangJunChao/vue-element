@@ -1,12 +1,12 @@
 <template>
   <div class="login">
-    <el-form class="login-form" label-position="top" ref="form" :model="form" label-width="80px">
+    <el-form class="login-form" status-icon label-position="top" ref="form" :model="form" label-width="80px" :rules="rules">
       <h2>用户登录</h2>
-      <el-form-item label="用户名">
-        <el-input v-model="form.username"></el-input>
+      <el-form-item label="用户名" prop="username">
+        <el-input v-model="form.username" autocomplete="off"></el-input>
       </el-form-item>
-      <el-form-item label="密码">
-        <el-input v-model="form.password"></el-input>
+      <el-form-item label="密码" prop="password">
+        <el-input type="password" v-model="form.password" autocomplete="off"></el-input>
       </el-form-item>
       <el-form-item>
         <el-button class="login-btn" type="primary">登 录</el-button>
@@ -22,6 +22,16 @@ export default {
       form: {
         username: '',
         password: ''
+      },
+      rules: {
+        username: [
+          { required: true, message: '请输入用户名', trigger: 'blur' },
+          { min: 3, max: 8, message: '长度在 3 到 8 个字符', trigger: 'blur' }
+        ],
+        password: [
+          { required: true, message: '请输入密码', trigger: 'blur' },
+          { min: 6, max: 11, message: '长度在 6 到 11 个字符', trigger: 'blur' }
+        ]
       }
     };
   }

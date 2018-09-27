@@ -1,45 +1,10 @@
 <template>
     <el-container>
       <el-header>
-        <!-- <div class="txtCenter" style="line-height:60px;">管理后台模板</div> -->
         <el-row style="color:#fff">
-          <el-col :span="5">logo</el-col>
-          <el-col :span="16">
-            <el-menu
-              :default-active="activeIndex2"
-              class="el-menu-demo"
-              mode="horizontal"
-              @select="handleSelect"
-              background-color="#545c64"
-              text-color="#fff"
-              active-text-color="#ffd04b">
-              <el-menu-item index="1">处理中心</el-menu-item>
-              <el-submenu index="2">
-                <template slot="title">我的工作台</template>
-                <el-menu-item index="2-1">选项1</el-menu-item>
-                <el-menu-item index="2-2">选项2</el-menu-item>
-                <el-menu-item index="2-3">选项3</el-menu-item>
-                <el-submenu index="2-4">
-                  <template slot="title">选项4</template>
-                  <el-menu-item index="2-4-1">选项1</el-menu-item>
-                  <el-menu-item index="2-4-2">选项2</el-menu-item>
-                  <el-menu-item index="2-4-3">选项3</el-menu-item>
-                </el-submenu>
-              </el-submenu>
-              <el-menu-item index="3" disabled>消息中心</el-menu-item>
-              <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
-            </el-menu>
-          </el-col>
-          <el-col :span="3">
-            <el-dropdown>
-              <i class="el-icon-setting" style="margin-right: 15px"></i>
-              <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item>查看</el-dropdown-item>
-                <el-dropdown-item>新增</el-dropdown-item>
-                <el-dropdown-item>删除</el-dropdown-item>
-              </el-dropdown-menu>
-            </el-dropdown>
-            <span>王小虎</span>
+          <el-col :span="4"><img src="../../assets/images/logo.png" alt=""></el-col>
+          <el-col :offset="16" :span="4">
+            <div class="tr"><a href="#" @click.prevent="logout">退出</a></div>
           </el-col>
         </el-row>
       </el-header>
@@ -90,17 +55,31 @@ export default {
   methods: {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
+    },
+    logout(){
+      this.$confirm('确定退出吗？', '退出提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.$router.push({
+          name: 'login'
+        });
+      }).catch(() => {
+
+      });
     }
   }
 };
 </script>
 
 <style>
+.tr{text-align:right;line-height:60px;}
 .el-header, .el-footer {
   background-color: #B3C0D1;
   color: #333;
 }
-.el-header{background:rgb(84, 92, 100);}
+.el-header{background:#b3c0d1;}
 
 .asideLeft {
   position:relative;
