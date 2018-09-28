@@ -15,21 +15,25 @@
             :default-openeds="['1' , '3']"
             :router="true">
             <el-submenu index="1">
-              <template slot="title"><i class="el-icon-message"></i>用户管理</template>
-              <el-menu-item index="/user">用户列表</el-menu-item>
+              <template slot="title"><i class="el-icon-location-outline"></i>用户管理</template>
+              <el-menu-item index="/user"><i class="el-icon-menu"></i>用户列表</el-menu-item>
             </el-submenu>
             <el-submenu index="2">
-              <template slot="title"><i class="el-icon-menu"></i>权限管理</template>
+              <template slot="title"><i class="el-icon-location-outline"></i>权限管理</template>
               <el-menu-item index="2-1">角色列表</el-menu-item>
               <el-menu-item index="2-2">权限列表</el-menu-item>
             </el-submenu>
             <el-submenu index="3">
-              <template slot="title"><i class="el-icon-tickets"></i>商品管理</template>
+              <template slot="title"><i class="el-icon-location-outline"></i>商品管理</template>
               <el-menu-item index="3-1">商品列表</el-menu-item>
+            </el-submenu>
+            <el-submenu index="4">
+              <template slot="title"><i class="el-icon-location-outline"></i>订单管理</template>
+              <el-menu-item index="4-1">订单列表</el-menu-item>
             </el-submenu>
           </el-menu>
         </el-aside>
-        <el-main style="min-height:600px">
+        <el-main class="indexMain">
           <router-view></router-view>
         </el-main>
       </el-container>
@@ -89,7 +93,9 @@ export default {
 }
 .el-container{position:relative;overflow: hidden;}
 .asideLeft .el-menu{border-right:none;}
-.el-main {
+.indexMain {
+  min-height:600px;
+  background:#e9eef3;
   color: #333;
 }
 .el-dropdown{margin-top:20px;color:#fff;}
