@@ -7,6 +7,9 @@ import '@/assets/css/base.css';
 import App from './App';
 import router from './router';
 
+// 插件的使用
+import MyAxios from '@/plugins/myaxios';
+Vue.use(MyAxios);
 Vue.use(ElementUI);
 
 Vue.config.productionTip = false;
