@@ -33,7 +33,7 @@
             </el-submenu>
           </el-menu>
         </el-aside>
-        <el-main class="indexMain">
+        <el-main class="indexMain" ref="main">
           <router-view></router-view>
         </el-main>
       </el-container>
@@ -46,15 +46,30 @@
 <script>
 export default {
   name: 'home',
+  beforeCreate(){
+    const token = sessionStorage.getItem('token');
+    if(!token) {
+      this.$router.push({
+        name: 'login'
+      });
+      this.$message.info('请登录！');
+    };
+  },
   data(){
     return {
       activeIndex2: '1'
     };
   },
   mounted() {
-    console.log(this);
-    console.log(this.$refs.copy.innerHTML);
-    console.log(this.$route.path);
+    // console.log(this.$route.path);
+    // console.log(this.$route.query);
+    // 当前内容少的话，屏幕高度全屏
+    const winH = document.body.clientHeight;
+    if(winH < 600) {
+      this.$refs.main.$el.style.minHeight = '600px';
+    }else{
+      this.$refs.main.$el.style.minHeight = (winH - 120)+'px';
+    };
   },
   methods: {
     handleSelect(key, keyPath) {
@@ -77,7 +92,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .tr{text-align:right;line-height:60px;}
 .el-header, .el-footer {
   background-color: #B3C0D1;
