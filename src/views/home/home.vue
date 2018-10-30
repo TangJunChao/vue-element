@@ -12,7 +12,7 @@
         <el-aside width="200px" class="asideLeft">
           <el-menu
             :default-active="$route.path"
-            :default-openeds="['1' , '3']"
+            :unique-opened="true"
             :router="true">
             <el-submenu index="1">
               <template slot="title"><i class="el-icon-location-outline"></i>用户管理</template>
@@ -21,7 +21,7 @@
             <el-submenu index="2">
               <template slot="title"><i class="el-icon-location-outline"></i>权限管理</template>
               <el-menu-item index="2-1">角色列表</el-menu-item>
-              <el-menu-item index="2-2">权限列表</el-menu-item>
+              <el-menu-item index="/rights">权限列表</el-menu-item>
             </el-submenu>
             <el-submenu index="3">
               <template slot="title"><i class="el-icon-location-outline"></i>商品管理</template>
@@ -47,13 +47,13 @@
 export default {
   name: 'home',
   beforeCreate(){
-    const token = sessionStorage.getItem('token');
-    if(!token) {
-      this.$router.push({
-        name: 'login'
-      });
-      this.$message.info('请登录！');
-    };
+    // const token = sessionStorage.getItem('token');
+    // if(!token) {
+    //   this.$router.push({
+    //     name: 'login'
+    //   });
+    //   this.$message.info('请登录！');
+    // };
   },
   data(){
     return {

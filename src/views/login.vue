@@ -36,27 +36,33 @@ export default {
     };
   },
   methods: {
-    handleLogin() {
-      this.$http.post('login', this.form)
-        .then((response) => {
-          console.log(response);
-          var res = response.data;
-          if(res.status === 200){
-            alert('登录成功');
-            // 登录成功
-            // 跳转
-            this.$router.push({
-              name: 'home'
-            });
-            // 保存token
-            sessionStorage.setItem('token', res.data.token);
-          }else{
-            alert('登录失败');
-          }
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+    async handleLogin() {
+      this.$refs.form.validate((valid) => {
+        if(!valid) {
+          this.$message.error('请完善内容!');
+          return;
+        }
+        this.$http.post('login', this.form)
+          .then((response) => {
+            console.log(response);
+            var res = response.data;
+            if(res.status === 200){
+              alert('登录成功');
+              // 登录成功
+              // 跳转
+              this.$router.push({
+                name: 'home'
+              });
+              // 保存token
+              sessionStorage.setItem('token', res.data.token);
+            }else{
+              alert('登录失败');
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      });
     }
   }
 };

@@ -1,0 +1,5 @@
+.page{text-align:center;}
+.search{margin-top:20px;}
+.search .el-input {
+  width: 300px;
+}
