@@ -20,16 +20,16 @@
             </el-submenu>
             <el-submenu index="2">
               <template slot="title"><i class="el-icon-location-outline"></i>权限管理</template>
-              <el-menu-item index="2-1">角色列表</el-menu-item>
-              <el-menu-item index="/rights">权限列表</el-menu-item>
+              <el-menu-item index="/roles"><i class="el-icon-menu"></i>角色列表</el-menu-item>
+              <el-menu-item index="/rights"><i class="el-icon-menu"></i>权限列表</el-menu-item>
             </el-submenu>
             <el-submenu index="3">
               <template slot="title"><i class="el-icon-location-outline"></i>商品管理</template>
-              <el-menu-item index="3-1">商品列表</el-menu-item>
+              <el-menu-item index="3-1"><i class="el-icon-menu"></i>商品列表</el-menu-item>
             </el-submenu>
             <el-submenu index="4">
               <template slot="title"><i class="el-icon-location-outline"></i>订单管理</template>
-              <el-menu-item index="4-1">订单列表</el-menu-item>
+              <el-menu-item index="4-1"><i class="el-icon-menu"></i>订单列表</el-menu-item>
             </el-submenu>
           </el-menu>
         </el-aside>

@@ -10,13 +10,10 @@ import router from './router';
 // 插件的使用
 import MyAxios from '@/plugins/myaxios';
 // 导入moment插件
-import moment from 'moment';
+// import moment form "moment";
 Vue.use(MyAxios);
 Vue.use(ElementUI);
-// 全局时间格式化过滤
-Vue.filter('dataftm', (value, dataStr) => {
-  return moment(value).format(dataStr);
-});
+// Vue.use(moment);
 
 Vue.config.productionTip = false;
 
