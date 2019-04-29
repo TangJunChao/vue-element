@@ -1,5 +1,3 @@
-import BreadCrumb from '@/components/common/breadcrumb.vue';
-
 export default {
   name: 'user',
   data() {
@@ -50,9 +48,6 @@ export default {
     };
   },
   mounted() {
-  },
-  components: {
-    BreadCrumb
   },
   methods: {
     async switchC(sta, id) {

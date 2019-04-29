@@ -25,11 +25,11 @@
             </el-submenu>
             <el-submenu index="3">
               <template slot="title"><i class="el-icon-location-outline"></i>商品管理</template>
-              <el-menu-item index="3-1"><i class="el-icon-menu"></i>商品列表</el-menu-item>
+              <el-menu-item index="/goods"><i class="el-icon-menu"></i>商品列表</el-menu-item>
             </el-submenu>
             <el-submenu index="4">
               <template slot="title"><i class="el-icon-location-outline"></i>订单管理</template>
-              <el-menu-item index="4-1"><i class="el-icon-menu"></i>订单列表</el-menu-item>
+              <el-menu-item index="/order"><i class="el-icon-menu"></i>订单列表</el-menu-item>
             </el-submenu>
           </el-menu>
         </el-aside>

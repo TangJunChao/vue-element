@@ -28,7 +28,6 @@
 </template>
 
 <script>
-import BreadCrumb from '@/components/common/breadcrumb.vue';
 
 export default {
   name: 'rights',
@@ -73,9 +72,6 @@ export default {
         console.log('111');
       }
     }
-  },
-  components: {
-    BreadCrumb
   }
 };
 </script>

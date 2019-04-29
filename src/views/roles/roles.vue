@@ -88,8 +88,6 @@
 </template>
 
 <script>
-import BreadCrumb from '@/components/common/breadcrumb';
-
 export default {
   name: 'roles',
   data() {
@@ -195,9 +193,6 @@ export default {
     handleClose (tag) {
       console.log('111');
     }
-  },
-  components: {
-    BreadCrumb
   }
 };
 </script>
